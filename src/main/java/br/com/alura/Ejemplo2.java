@@ -18,14 +18,28 @@ public class Ejemplo2 {
         listaString.add(variable3);
         listaString.add(variable4);
 
+        //Imprimiento ArrayList NORMAL
+        System.out.println("FORMAS DE LEER UNA LISTA");
         System.out.println("Normal");
         System.out.println(listaString);
 
         //FORMAS DE LEER UN ARRYLIST
+        System.out.println("Tamaño size");
         for (int i = 0; i < listaString.size(); i++) {
-            System.out.println("Tamaño ");
+
             System.out.println(listaString.get(i));
         }
+        //FOR EACH
+        System.out.println("Tamaño con forEach");
+        for (String clase : listaString ) {
+            System.out.println(clase);
+        }
+
+        //LAMBDAS desde JAVa 8
+        System.out.println("Con Lambdas");
+        listaString.forEach(clase -> {
+            System.out.println(clase);
+        });
 
     }
 }
