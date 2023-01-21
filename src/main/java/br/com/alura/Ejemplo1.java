@@ -19,7 +19,20 @@ public class Ejemplo1 {
         lista.add(variable4);
 
 
-        System.out.println(lista);
+        System.out.println(" ArrayList " + lista);
+
+        //ELIMINAR elemento de lista
+        //lista.remove("para eliminar remove" + 2);
+        //System.out.println(lista);
+
+
+        //cambiar elemento de lista
+        lista.set(2, "Ejemplo Alterado");
+        System.out.println(" set para cambiar " + lista);
+
+
+        //Saber tamaño lista
+        System.out.println(" size " + lista.size());
 
     }
 }
