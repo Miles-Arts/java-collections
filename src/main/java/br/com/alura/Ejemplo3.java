@@ -2,6 +2,10 @@ package br.com.alura;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class Ejemplo3 {
 
@@ -35,6 +39,23 @@ public class Ejemplo3 {
         System.out.println("reverseOrder para orden descendente ");
         Collections.sort(cursos, Collections.reverseOrder());
         System.out.println(cursos);
+
+        //METODOS DE array List
+        cursos.sort(Comparator.reverseOrder());
+        System.out.println("Ordenar con ArrayList y SORT ");
+        System.out.println(cursos);
+
+        //METODOS DE array List menor a MAYOR
+            cursos.sort(Comparator.naturalOrder());
+            System.out.println("Ordenar con NATURAL ArrayList y SORT ");
+            System.out.println(cursos);
+
+
+        //CON STRINGS
+        //cursos.stream().sorted().collect(Collectors.toList());
+        List<String> cursosList = cursos.stream().sorted().collect(Collectors.toList());
+        System.out.println("Ordenar Strings con STREAM  y TO LIST");
+        System.out.println(cursosList);
 
     }
 }
