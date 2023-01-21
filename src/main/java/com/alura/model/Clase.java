@@ -1,13 +1,13 @@
-package br.com.alura;
+package com.alura.model;
 
-public class Curso{
+public class Clase {
     private String nombre;
-    private int  tiempo;
+    //private int  tiempo;
 
 
-    public Curso(String nombre, int tiempo) {
+    public Clase(String nombre) {
         this.nombre = nombre;
-        this.tiempo = tiempo;
+        //this.tiempo = tiempo;
     }
 
     public String getNombre() {
@@ -18,13 +18,13 @@ public class Curso{
         this.nombre = nombre;
     }
 
-    public int getTiempo() {
+    /*public int getTiempo() {
         return tiempo;
-    }
+    }*/
 
-    public void setTiempo(int tiempo) {
+    /*public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
-    }
+    }*/
 
     @Override
     public String toString() {
