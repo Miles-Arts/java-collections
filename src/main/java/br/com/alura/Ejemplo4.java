@@ -17,7 +17,14 @@ public class Ejemplo4 {
         Curso curso3 = new Curso("Química", 30);
         Curso curso4 = new Curso("Historia", 30);
 
-        ArrayList<String> cursos = new ArrayList<>();
+        ArrayList<Curso> cursos = new ArrayList<>();
+        cursos.add(curso1);
+        cursos.add(curso2);
+        cursos.add(curso3);
+        cursos.add(curso4);
+
+        System.out.println("Usando class y Array List");
+        System.out.println(cursos);
 
     }
 }

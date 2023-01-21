@@ -25,4 +25,9 @@ public class Curso {
     public void setTiempo(int tiempo) {
         this.tiempo = tiempo;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }
