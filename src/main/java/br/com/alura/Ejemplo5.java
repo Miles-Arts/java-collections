@@ -27,13 +27,18 @@ public class Ejemplo5 {
         System.out.println(cursos);
 
         //Iteración normal
-        Collections.sort(cursos);
+        //Collections.sort(cursos);
         //Iteración reverse
-        Collections.sort(cursos, Collections.reverseOrder());
+        //Collections.sort(cursos, Collections.reverseOrder());
         System.out.println(cursos);
 
-        cursos.sort(Comparator.comparing(Curso::getNombre));
+        /*cursos.sort(Comparator.comparing(Curso::getNombre));
         System.out.println(cursos);
 
+        Collections.sort(cursos,Comparator.comparing(Curso::getNombre).reversed());
+        System.out.println(cursos);*/
+
+        List<Curso> cursoLista = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparingInt(Curso::getTiempo)).collect(Collectors.toList());
+        System.out.println(cursoLista);
     }
 }
