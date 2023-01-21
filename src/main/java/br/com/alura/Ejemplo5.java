@@ -12,10 +12,10 @@ public class Ejemplo5 {
 
     public static void main(String[] args) {
 
-        Curso curso1 = new Curso("Java", 30);
-        Curso curso2 = new Curso("JavaScript", 10);
-        Curso curso3 = new Curso("PHP", 20);
-        Curso curso4 = new Curso("Ruby", 50);
+        Curso curso1 = new Curso("Ruby", 30);
+        Curso curso2 = new Curso("PHP", 10);
+        Curso curso3 = new Curso("JavaScript", 20);
+        Curso curso4 = new Curso("Java", 50);
 
         ArrayList<Curso> cursos = new ArrayList<>();
         cursos.add(curso1);
@@ -26,9 +26,14 @@ public class Ejemplo5 {
         System.out.println("Usando class y Array List");
         System.out.println(cursos);
 
+        //Iteración normal
         Collections.sort(cursos);
+        //Iteración reverse
+        Collections.sort(cursos, Collections.reverseOrder());
         System.out.println(cursos);
 
+        cursos.sort(Comparator.comparing(Curso::getNombre));
+        System.out.println(cursos);
 
     }
 }
