@@ -52,9 +52,15 @@ public class Ejemplo10 {
         //tiempo mínimo
         System.out.println(cursos.stream().mapToInt(Curso::getTiempo).min().getAsInt());
 
+        System.out.println("---");
+
         Map<String, List<Curso>> grupoCurso = cursos.stream().collect(Collectors.groupingBy(Curso::getNombre));
 
+        //elimina String repetidos
+        grupoCurso.forEach((key , value) -> System.out.println(key));
 
+        //elimina String repetidos y agrga la canddad de materias repetidas
+        grupoCurso.forEach((key , value) -> System.out.println(key + " - " + value.size()));
 
         System.out.println("---");
     }
