@@ -1,11 +1,11 @@
 package com.alura.model;
 
-public class Clase {
+public class Aula {
     private String nombre;
     //private int  tiempo;
 
 
-    public Clase(String nombre) {
+    public Aula(String nombre) {
         this.nombre = nombre;
         //this.tiempo = tiempo;
     }
