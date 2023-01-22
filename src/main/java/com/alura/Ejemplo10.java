@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.Map;
 
 public class Ejemplo10 {
     public static void main(String[] args) {
@@ -16,8 +17,10 @@ public class Ejemplo10 {
         Curso curso4 = new Curso("Geometría", 50);
         Curso curso5 = new Curso("Física", 60);
         Curso curso6 = new Curso("Química", 80);
-        Curso curso7 = new Curso("Geografía", 70);
-        Curso curso8 = new Curso("Educación Física", 30);
+        Curso curso7 = new Curso("Química", 70);
+        //Curso curso8 = new Curso("Geografía", 70);
+        //Curso curso8 = new Curso("Educación Física", 30);
+        Curso curso8 = new Curso("Física", 30);
 
         ArrayList<Curso> cursos = new ArrayList<>();
         cursos.add(curso1);
@@ -31,9 +34,13 @@ public class Ejemplo10 {
 
         System.out.println("Streams");
 
-        List<Curso> cursoLista = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparingInt(Curso::getTiempo)).collect(Collectors.toList());
+        List<Curso> cursoList = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparingInt(Curso::getTiempo)).collect(Collectors.toList());
+
+
 
         System.out.println("---");
+
+        System.out.println(cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Historia")).mapToInt(Curso::getTiempo).sum());
 
         // tiempo promedio
         System.out.println(cursos.stream().mapToInt(Curso::getTiempo).average().getAsDouble());
@@ -44,6 +51,10 @@ public class Ejemplo10 {
 
         //tiempo mínimo
         System.out.println(cursos.stream().mapToInt(Curso::getTiempo).min().getAsInt());
+
+        Map<String, List<Curso>> grupoCurso = cursos.stream().collect(Collectors.groupingBy(Curso::getNombre));
+
+
 
         System.out.println("---");
     }
