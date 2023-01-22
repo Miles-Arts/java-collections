@@ -1,7 +1,6 @@
 package com.alura;
 
 import model.Curso;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -59,8 +58,17 @@ public class Ejemplo10 {
         //elimina String repetidos
         grupoCurso.forEach((key , value) -> System.out.println(key));
 
+        System.out.println("---");
+
         //elimina String repetidos y agrga la canddad de materias repetidas
         grupoCurso.forEach((key , value) -> System.out.println(key + " - " + value.size()));
+
+        System.out.println("---");
+
+
+        //ParalleStream ejecuta el trabajo en varioos threads
+        System.out.println("Con paralleStreams");
+        System.out.println(cursos.parallelStream().mapToInt(Curso::getTiempo).sum());
 
         System.out.println("---");
     }
