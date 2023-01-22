@@ -20,7 +20,7 @@ public class Ejemplo8 {
 
        //add
         long inicio = System.currentTimeMillis();
-        for (int i = 0 ; i < 10000000 ; i++) {
+        for (int i = 0 ; i < 100000 ; i++) {
             lista.add(i);
         }
         long fin = System.currentTimeMillis();
@@ -29,13 +29,31 @@ public class Ejemplo8 {
 
         //get
         inicio = System.currentTimeMillis();
+        for(int i = 0; i < 100000; i++) {
+            lista.get(i);
+        }
+        fin = System.currentTimeMillis();
+        duracion = fin - inicio;
+        System.out.println(nombreImplementacion + " get: " + duracion);
 
-
-        //rem,ove
-
+        //remove
+        inicio = System.currentTimeMillis();
+        for(int i = 99999; i >= 0; i--) {
+        lista.remove(i);
+        }
+        fin = System.currentTimeMillis();
+        duracion = fin - inicio;
+        System.out.println(nombreImplementacion + " remove: " + duracion);
         }
 
-        //System.out.println(final);
+        //LINKEDLIST
+        //Crea relación entre listas -listas entrelazadas
+        // como vagones  A <-> B1 <-> B2 <->  C  D UNA UNIDA A LA OTRA
+
+        //ARRAYLIST
+        //EN UN SÓLO SENTIDO
+        // A -> B -> C -> D
+
 
     }
 }
