@@ -2,25 +2,26 @@ package model;
 
 import com.alura.model.Aula;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Curso{
     private String nombre;
     private int  tiempo;
-    //private List<Aula> aulaLista = new ArrayList<>();
-    private List<Aula> aulaLista = new LinkedList<>();
+    private List<Aula> aulaLista = new ArrayList<>();
+
 
     public Curso(String nombre, int tiempo) {
         this.nombre = nombre;
         this.tiempo = tiempo;
     }
 
-    publFic Curso(String nombre, int tiempo, List<Aula> aulaList) {
+    public Curso(String nombre, int tiempo, List<Aula> aulaLista) {
         this.nombre = nombre;
         this.tiempo = tiempo;
-        this.aulaLista = aulaList;
+        this.aulaLista = aulaLista;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -38,17 +39,18 @@ public class Curso{
         this.tiempo = tiempo;
     }
 
-    public List<Aula> getClaseLista() {
+    public List<Aula> getAulaLista() {
+        //return Collections.unmodifiableList(aulaLista);
         return aulaLista;
     }
 
-    public void setClaseLista(List<Aula> aulaLista) {
+    public void setAulaLista(List<Aula> aulaLista) {
         this.aulaLista = aulaLista;
     }
 
-    public void addClase(Aula aula){
+    public void addAula(Aula aula){
         this.aulaLista.add(aula);
-    };
+    }
 
     @Override
     public String toString() {

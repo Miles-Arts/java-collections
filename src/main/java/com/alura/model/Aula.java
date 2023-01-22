@@ -1,13 +1,11 @@
 package com.alura.model;
 
 public class Aula {
-    private String nombre;
-    //private int  tiempo;
 
+    private String nombre;
 
     public Aula(String nombre) {
         this.nombre = nombre;
-        //this.tiempo = tiempo;
     }
 
     public String getNombre() {
@@ -17,7 +15,6 @@ public class Aula {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     /*public int getTiempo() {
         return tiempo;
     }*/
@@ -27,10 +24,9 @@ public class Aula {
     }*/
 
     @Override
-    public String toString() {
+    public String toString(){
         return this.nombre;
-    }
-
+    };
     /*@Override
     public int compareTo(Curso o) {
         return this.nombre.compareTo(o.getNombre());

@@ -7,10 +7,10 @@ public class Ejemplo2 {
     public static void main(String[] args) {
 
 
-        String variable1 = "Aula 1";
-        String variable2 = "Aula 2";
-        String variable3 = "Aula 3";
-        String variable4 = "Aula 4";
+        String variable1 = "Clase 1";
+        String variable2 = "Clase 2";
+        String variable3 = "Clase 3";
+        String variable4 = "Clase 4";
 
         ArrayList<String> listaString = new ArrayList<>();
         listaString.add(variable1);
