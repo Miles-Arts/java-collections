@@ -22,8 +22,7 @@ public class Ejemplo9 {
         cursos.add(curso3);
         cursos.add(curso4);
 
-        System.out.println("Tiempo de curso");
-
+        System.out.println("Sumando tiempo con Collection ");
 
         Collections.sort(cursos,Comparator.comparing(Curso::getNombre).reversed());
 
@@ -36,6 +35,19 @@ public class Ejemplo9 {
         //System.out.println(cursos);
 
         List<Curso> cursoLista = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparingInt(Curso::getTiempo)).collect(Collectors.toList());
-        System.out.println(cursoLista);
+
+
+        System.out.println("Sumando tiempo con Streams");
+        //System.out.println(cursos.stream().mapToInt(Curso::getTiempo).sum());
+        //System.out.println(cursos.stream().mapToInt(Curso::getTiempo).max());
+        //System.out.println(cursos.stream().mapToInt(Curso::getTiempo).max().getAsInt());
+
+
+        //Filter para elimar un objeto de List
+        System.out.println(cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Historia")).mapToInt(Curso::getTiempo).sum());
+
+
+        //Streams sirve para ahorra código y evitar hacer funciones innecesarias
+        System.out.println("Streams sirve para ahorra código y evitar hacer funciones innecesarias");
     }
 }
