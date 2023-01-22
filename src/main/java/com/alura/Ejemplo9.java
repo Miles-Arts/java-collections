@@ -26,12 +26,17 @@ public class Ejemplo9 {
 
         Collections.sort(cursos,Comparator.comparing(Curso::getNombre).reversed());
 
-        int tiempo = 0;
+        //int tiempo = 0;
+        int suma = 0;
         for (Curso curso: cursos ) {
-            tiempo += curso.getTiempo();
+            if(!curso.getNombre().equalsIgnoreCase("Historia")) {
+                //tiempo += curso.getTiempo();
+                suma += curso.getTiempo();
+            };
         }
 
-        System.out.println(tiempo);
+        //System.out.println(tiempo);
+        System.out.println(suma);
         //System.out.println(cursos);
 
         List<Curso> cursoLista = cursos.stream().filter(curso -> !curso.getNombre().equalsIgnoreCase("Ruby")).sorted(Comparator.comparingInt(Curso::getTiempo)).collect(Collectors.toList());
