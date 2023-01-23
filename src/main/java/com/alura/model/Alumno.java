@@ -10,9 +10,7 @@ public class Alumno {
         this.codigo = codigo;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
+    public String getCodigo() { return codigo; }
 
     public String getNombre() {
         return nombre;
@@ -23,4 +21,15 @@ public class Alumno {
         return this.nombre;
     };
 
+    @Override
+    public boolean equals(Object obj) {
+        Alumno alumno = (Alumno) obj;
+         return this.nombre.equals(alumno.getNombre());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return this.nombre.hashCode();
+    }
 }
