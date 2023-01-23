@@ -10,7 +10,7 @@ public class Curso{
     private int  tiempo;
     private List<Aula> aulaLista = new ArrayList<>();
     private Collection<Alumno> alumnos = new HashSet<>();
-
+    //private Collection<Alumno> alumnos = new LinkedHashSet<>();
 
     public Curso(String nombre, int tiempo ) {
         this.nombre = nombre;

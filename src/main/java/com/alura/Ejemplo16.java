@@ -3,6 +3,8 @@ package com.alura;
 import com.alura.model.Alumno;
 import model.Curso;
 
+import java.util.Iterator;
+
 public class Ejemplo16 {
 
     public static void main(String[] args) {
@@ -32,7 +34,17 @@ public class Ejemplo16 {
 
         System.out.println("----");
 
-        curso1.getAlumnos().forEach(alumno ->  System.out.println(alumno));
+        //curso1.getAlumnos().forEach(alumno ->  System.out.println(alumno));
+
+        System.out.println("----");
+
+        Iterator<Alumno> alumnoIterator = curso1.getAlumnos().iterator();
+
+           while (alumnoIterator.hasNext()){
+               System.out.println(alumnoIterator.next());
+           };
+
+
 
         System.out.println("----");
 
