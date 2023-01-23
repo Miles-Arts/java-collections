@@ -3,9 +3,7 @@ package com.alura;
 import com.alura.model.Alumno;
 import model.Curso;
 
-import java.util.Optional;
-
-public class Ejemplo18 {
+public class Ejemplo19 {
 
     public static void main(String[] args) {
 
@@ -34,24 +32,20 @@ public class Ejemplo18 {
 
         System.out.println("----");
 
-        curso1.getAlumnos().forEach(alumno -> System.out.println(alumno));
+        //curso1.getAlumnos().forEach(alumno -> System.out.println(alumno));
 
         System.out.println("----");
 
-        // Alumno es: a
-        //Buscar un elemnto especifico
-        Optional<Alumno> alumno = curso1.getAlumnos().stream().filter(a ->  "003".equalsIgnoreCase(a.getCodigo())).findFirst();
 
-        //Buscar un elemnto especifico
-        if(alumno.isPresent()) {
-            System.out.println(alumno.get());
-        }
 
         System.out.println("----");
 
         //CON METODO MAP
         Alumno alumnoMap = curso1.getAlumnoMap().get("003");
+
+
         System.out.println(alumnoMap);
+
 
 
         System.out.println("----");

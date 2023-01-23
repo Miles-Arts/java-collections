@@ -12,6 +12,11 @@ public class Curso{
     private Collection<Alumno> alumnos = new HashSet<>();
     //private Collection<Alumno> alumnos = new LinkedHashSet<>();
 
+    //private Map<String, Alumno> alumnoMap = new HashMap<>();
+    private Map<String, Alumno> alumnoMap = new LinkedHashMap<>();
+
+
+
     public Curso(String nombre, int tiempo ) {
         this.nombre = nombre;
         this.tiempo = tiempo;
@@ -54,7 +59,7 @@ public class Curso{
         this.aulaLista.add(aula);
     }
 
-    public void addAlumno(Alumno alumno) { this.alumnos.add(alumno);}
+    public void addAlumno(Alumno alumno) { this.alumnos.add(alumno); this.alumnoMap.put(alumno.getCodigo(), alumno);}
 
     public boolean verificaAlumno(Alumno alumno) { return this.alumnos.contains(alumno);}
     @Override
@@ -66,7 +71,12 @@ public class Curso{
         return alumnos;
     }
 
-    /*@Override
+    public Map<String, Alumno> getAlumnoMap() {
+        return alumnoMap;
+    }
+
+
+/*@Override
     public int compareTo(Curso o) {
         return this.nombre.compareTo(o.getNombre());
     }*/
