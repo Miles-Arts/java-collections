@@ -53,9 +53,21 @@ public class Ejemplo13 {
         String max = listaAlumnos.stream().max(Comparator.comparingInt(String::length)).get();
 
         System.out.println(max);
-
+        System.out.println("----");
         //MAX . LENGTH - para saber el números de caracteres del objeto String mayor
         System.out.println(max.length());
+
+        System.out.println("----");
+
+        //Elimina de la lista un elemento elegido
+        //primero se pone el elemento a eliminar para evitar NULL
+        listaAlumnos.removeIf(alumno -> "Pedro Pink".equalsIgnoreCase(alumno));
+
+        System.out.println("----");
+
+        listaAlumnos.forEach(alumno -> {
+            System.out.println(alumno);
+        });
 
         System.out.println("----");
 
