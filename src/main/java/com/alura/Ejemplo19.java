@@ -43,6 +43,10 @@ public class Ejemplo19 {
         //CON METODO MAP
         Alumno alumnoMap = curso1.getAlumnoMap().get("003");
 
+        // primero el KEY         CODIGO   valor del Codigo
+        curso1.getAlumnoMap().forEach((codigo, alumno) -> {
+            System.out.println(alumno);
+        } );
 
         System.out.println(alumnoMap);
 

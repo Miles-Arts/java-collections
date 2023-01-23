@@ -75,7 +75,6 @@ public class Curso{
         return alumnoMap;
     }
 
-
 /*@Override
     public int compareTo(Curso o) {
         return this.nombre.compareTo(o.getNombre());
