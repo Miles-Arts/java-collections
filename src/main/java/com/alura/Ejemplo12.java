@@ -47,5 +47,4 @@ public class Ejemplo12 {
 
         System.out.println("----");
     }
-
 }
