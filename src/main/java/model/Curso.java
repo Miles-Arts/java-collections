@@ -1,19 +1,21 @@
 package model;
 
+import com.alura.model.Alumno;
 import com.alura.model.Aula;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Curso{
     private String nombre;
     private int  tiempo;
     private List<Aula> aulaLista = new ArrayList<>();
+    private Collection<Alumno> alumnos = new HashSet<>();
 
 
-    public Curso(String nombre, int tiempo) {
+    public Curso(String nombre, int tiempo ) {
         this.nombre = nombre;
         this.tiempo = tiempo;
+
     }
 
     public Curso(String nombre, int tiempo, List<Aula> aulaLista) {
@@ -52,12 +54,17 @@ public class Curso{
         this.aulaLista.add(aula);
     }
 
+    public void addAlumno(Alumno alumno) { this.alumnos.add(alumno);}
+
+    public boolean verificaAlumno(Alumno alumno) { return this.alumnos.contains(alumno);}
     @Override
     public String toString() {
         return this.nombre;
     }
 
-
+    public Collection<Alumno> getAlumnos() {
+        return alumnos;
+    }
 
     /*@Override
     public int compareTo(Curso o) {
